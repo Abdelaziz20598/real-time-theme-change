@@ -1,1 +1,84 @@
 <!DOCTYPE html >
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title> How you doing </title>
+        <link rel = "stylesheet" href="styles.css">
+        </head>
+        
+        <h1 style = "color  : black ;" > My first project </h1>
+        
+        
+        <body >
+               <style>
+                body{
+                 background-color :rgb(128 , 255,255);
+                }
+               </style>
+        
+        
+            <br/>
+            <label style ="color : red " ><pre>Red :  </pre></label>
+            0<input type="range" min="0" max="100" step="10" id="Red"  > 255
+            <br/>
+            <br/>
+            <label style ="color : green" ><pre>Green : </pre></label>
+            0<input type="range" min="0" max="100" step="10" id="Green"> 255
+            <br/>
+            <br/>
+            <label style ="color : blue "> <pre>Blue : </pre></label>
+            0<input type="range" min="0" max="100" step="10" id="Blue"> 255
+            
+            <br/>
+            <br/>
+            <button id="butt1" > click </button>
+            <button id="butt2" style="color : white" > color </button>
+            
+            
+            
+            
+           <script>
+            
+             var button= document.getElementById("butt1");
+             var button2= document.getElementById("butt2");
+             var r = document.getElementById("Red");
+             var g = document.getElementById("Green") ;
+             var b = document.getElementById("Blue") ;
+            
+            
+            
+            button.onclick= function () {}
+            
+            
+            
+            
+            button2.onclick= function () {
+                this.style.backgroundColor= "rgb(" + r.value + ","+ g.value+","+ b.value+")";
+                };
+            
+           </script> 
+        </body>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </html>
