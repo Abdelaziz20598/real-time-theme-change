@@ -1,12 +1,13 @@
 <!DOCTYPE html >
     <html>
         <head>
-            <meta charset="utf-8"/>
             <title> How you doing </title>
+            <script src="http://dweet.io/client/dweet.io.min.js"></script>
+            <meta charset="utf-8"/>
         <link rel = "stylesheet" href="styles.css">
         </head>
-        
-        <h1 style = "color  : black ;" > My first project </h1>
+         <h1 style = "color  : black ;" >ENG OSAMA SAMIR  </h1>
+        <h1 style = "color  : black ;" > My first project (ABDELAZIZ)   </h1>
         
         
         <body >
@@ -19,42 +20,67 @@
         
             <br/>
             <label style ="color : red " ><pre>Red :  </pre></label>
-            0<input type="range" min="0" max="100" step="10" id="Red"  > 255
+            0<input type="range" min="0" max="100" step="1" id="Red"  > 255
             <br/>
             <br/>
             <label style ="color : green" ><pre>Green : </pre></label>
-            0<input type="range" min="0" max="100" step="10" id="Green"> 255
+            0<input type="range" min="0" max="100" step="1" id="Green"> 255
             <br/>
             <br/>
             <label style ="color : blue "> <pre>Blue : </pre></label>
-            0<input type="range" min="0" max="100" step="10" id="Blue"> 255
+            0<input type="range" min="0" max="100" step="1" id="Blue"> 255
             
             <br/>
             <br/>
-            <button id="butt1" > click </button>
-            <button id="butt2" style="color : white" > color </button>
-            
-            
-            
+            <button id="butt" > click </button>
+            <div id = "mydiv">color</div>
+             <div id = "myP"></div>
+         <input type="text" id="msg" style="width:200px; height:20px;" />
+          
             
            <script>
             
-             var button= document.getElementById("butt1");
-             var button2= document.getElementById("butt2");
+             var button= document.getElementById("butt");
+             
              var r = document.getElementById("Red");
              var g = document.getElementById("Green") ;
              var b = document.getElementById("Blue") ;
             
+            var el = document.getElementById("mydiv");
             
-            
-            button.onclick= function () {}
-            
-            
-            
-            
-            button2.onclick= function () {
-                this.style.backgroundColor= "rgb(" + r.value + ","+ g.value+","+ b.value+")";
+            button.onclick= function () {
+
+                var obj = {
+                    msg: document.getElementById("msg"),
+                   msg1: r.value,
+                    msg2:g.value,
+                    msg3:b.value
+                    
                 };
+                dweetio.dweet_for("omarAbdelaziz" , obj, function (err, dweet) {
+                
+            });
+                     
+            };
+            dweetio.listen_for("omarAbdelaziz",function(dweet){
+                  document.getElementById("myP").innerHTML='<img alt="ghjkl;" src="gg .jpg"/>';
+                document.getElementById("msg").value = " NO Errors";
+                  el.style.backgroundColor= "rgb(" + dweet.content.msg1 + ","+ dweet.content.msg2 +","+ dweet.content.msg3+")";    
+                console.log(dweet.content.msg1);
+                console.log(dweet.content.msg2);
+                r.value= dweet.content.msg1;
+                g.value= dweet.content.msg2;
+                b.value= dweet.content.msg3;
+                console.log(dweet.content.msg3);
+                
+            });
+            
+            
+            
+            
+          
+                
+                
             
            </script> 
         </body>

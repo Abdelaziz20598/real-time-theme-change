@@ -15,30 +15,32 @@ h1:hover{
      opacity: 1;
      color: green
 }
-#butt1 {
+#mydiv {
+	box-sizing: border-box;/*width = content + padding + border*/
+    background-color: #404040;
+    color: rgb(211, 243, 28);
+    border: 5px solid rgb(116, 6, 241);
+    margin: 20px;
+    padding: 50px;
+    width: calc(100%-40px) /*note the width = doesn't include margin so we subtract it 
+							so that margin + div = 100%	*/
+}
+#butt {
     opacity: 0.5;
 
     color : red
     
 }
-#butt1:hover{
-    width:100px;
+#butt:hover{
+    transition-property: transform ,width ,height;
+    transition-duration: .5s;
+    border-radius: 20px;
+    transition-delay:.02s;
+    transform: translateY(5px);
+   width:100px;
     height:80px;
     background-color: red;
     color: white;
-    opacity:1
-}
-#butt2 {
-    background-color : black ;
-     width:100px;
-    height:80px;
-    color: white;
-    opacity: 0.5;
-     border-radius: 10px;
-    
-}
-#butt2:hover{
-    
     opacity:1
 }
 
